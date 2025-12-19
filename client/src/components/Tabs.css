@@ -1,0 +1,74 @@
+/* Tabs.css - RESPONSIVE */
+
+.tabs-container {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tabs-header {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.tabs-header::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.tab-button {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: max-content;
+}
+
+.tab-button:hover {
+  color: #2c3e50;
+  background: #f8f9fa;
+}
+
+.tab-button.active {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: #2c3e50;
+  border-radius: 2px 2px 0 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .tab-button.active::after {
+    left: 5%;
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
